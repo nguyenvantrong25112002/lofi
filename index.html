@@ -1,0 +1,287 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>Lofi</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <!-- <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script> -->
+    <link rel="shortcut icon" href="./icon.png" type="image/x-icon">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="./public/bootstrap-4.0.0/bootstrap.min.css">
+    <link rel="stylesheet" href="./public/icofont/icofont.css">
+    <link rel="stylesheet" href="./public/flipclock/flipclock.css">
+    <link rel="stylesheet" href="./css/main.css">
+</head>
+
+<body>
+    <div id="load" class="loading">
+        <img src="./assets/icons/lofi-logo.gif" alt="">
+    </div>
+    <div class="day" id="app" data-day_night_rainny="day_rainny" data-day_night="day_sunny" style="background-color: black;">
+
+        <div class="container-audio-extra">
+            <audio id="rain_city_mp3" hidden loop>
+                <source src="./assets/musics/rain_forest.mp3" type="audio/ogg">
+                <source src="./assets/musics/rain_forest.mp3"  type="audio/mpeg">
+                Your browser does not support the audio element.
+            </audio>
+            <audio id="city_traffic_mp3" hidden loop>
+                <source src="./assets/musics/city_traffic.mp3" type="audio/ogg">
+                <source src="./assets/musics/city_traffic.mp3"  type="audio/mpeg">
+                Your browser does not support the audio element.
+            </audio>
+        </div>
+        <div class="container-video">
+
+            <video id="day_sunny" class="videoOut active" autoplay muted loop> 
+                <source src="./assets/video/Day-sunny.mp4" type="video/mp4">
+            </video>
+            <video id="day_rainny" class="videoOut " autoplay muted loop> 
+                <source src="./assets/video/Day-rainny.mp4" type="video/mp4">
+            </video>
+            <video id="night_clear" class="videoOut " autoplay muted loop> 
+                <source src="./assets/video/Night-clear.mp4" type="video/mp4">
+            </video>
+            <video id="night_rainny" class="videoOut " autoplay muted loop> 
+                <source src="./assets/video/Night-rainny.mp4" type="video/mp4">
+            </video>
+            <video id="main_video" class="videoOut " autoplay muted loop> 
+                <source  src="" type="video/mp4">
+            </video>
+        </div>
+        <div class="music_disc">
+            <!-- <div class="need">
+                <img class="need_img" src="./assets/img/music_disc_2.png" alt="">
+            </div> -->
+            <div class="disc">
+                <img class="disc_img" src="./assets/img/music_disc_1.png" alt="">
+            </div>
+        </div>
+
+
+        <div class="main">
+            <nav class="main-navbar">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class="main_navbar">
+                                <div class="logo">
+                                    <img src="./assets/icons/lofi-logo.gif" alt="">
+                                </div>
+                                <!-- <div class="menu">
+
+                                    <ul class="nav justify-content-center">
+
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="#">How it works</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="#">Pricing</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="#">Contact us</a>
+                                        </li>
+
+                                        <li class="nav-item dropdown">
+                                            <a class="nav-link dropdown__select" href="#">
+                                                More
+                                                <i class="fa fa-caret-down dropdown__caret"></i>
+                                            </a>
+                                            <ul class="dropdown__list">
+                                                <li class="">
+                                                    <a href="#" class="nav-link dropdown__text">New project</a>
+                                                </li>
+                                                <li class="">
+                                                    <a href="#" class="nav-link dropdown__text">New project</a>
+                                                </li>
+                                                <li class="">
+                                                    <a href="#" class="nav-link dropdown__text">New project</a>
+                                                </li>
+                                                <li class="">
+                                                    <a href="#" class="nav-link dropdown__text">New project</a>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </div> -->
+                                <div class="nav-action">
+                                    <div class="day-night">
+
+                                        <input class="toggle" id="day-night-toggle" value="night_clear" type="checkbox" />
+                                        <label class="toggle-button" for="day-night-toggle">
+                                          <div class="rays">
+                                            <div class="ray"></div>
+                                            <div class="ray"></div>
+                                            <div class="ray"></div>
+                                            <div class="ray"></div>
+                                            <div class="ray"></div>
+                                            <div class="ray"></div>
+                                            <div class="ray"></div>
+                                            <div class="ray"></div>
+                                          </div>
+                                          <div class="sun-moon">
+                                            <div class="shadow"></div>
+                                          </div>
+                                        </label>
+                                    </div>
+                                    <div class="zoom">
+                                        <button id="btnFullscreen" class=" btn_nav" type="button">
+                                            <i class="icofont-drag1"></i>
+                                        </button>
+                                    </div>
+                                    <!-- <div class="share">
+                                        <button class=" btn_nav" type="button">
+                                            Share
+                                        </button>
+                                    </div> -->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+            <nav class="main-audio-city">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class="main_audio_city">
+                                <div class="city city_traffic">
+                                    <button data-audio_on_off="off" id="city_traffic" class="btn_nav">city traffic</button>
+                                    <div id="city_traffic_icon" class="icon">
+                                        <i class="icofont-volume-mute"></i>
+                                    </div>
+                                    <div id="city_traffic-range" class="city_range city_traffic-range city_range_none">
+                                        <i class="icofont-volume-mute"></i>
+                                        <div class="range-slider">
+                                            <input class="range-slider__range volume_city_traffic-range" type="range" type="range" min="0" max="1" step="0.00000001" value="1">
+                                        </div>
+                                        <i class="icofont-audio"></i>
+
+                                    </div>
+                                </div>
+                                <div class="city city_rain">
+                                    <button data-audio_on_off="off" id="city_rain" class=" btn_nav">city rain</button>
+                                    <div id="city_rain_icon" class="icon">
+                                        <i class="icofont-volume-mute"></i>
+                                    </div>
+                                    <div id="city_rain-range" class="city_range city_rain-range city_range_none">
+
+                                        <i class="icofont-volume-mute"></i>
+                                        <div class="range-slider">
+                                            <input class="range-slider__range volume_city_rain-range" type="range" min="0" max="1" step="0.00000001" value="1">
+
+                                        </div>
+                                        <i class="icofont-audio"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+            <div class="player">
+
+                <div class="wrapper">
+                    <div class="song-details">
+                        <p class="name"></p>
+                        <p class="artist"></p>
+                    </div>
+                    <div class="progress-area">
+                        <div class="progress-bar">
+                            <audio id="main-audio" src=""></audio>
+                        </div>
+                        <div class="song-timer">
+                            <span class="current-time">0:00</span>
+                            <span class="max-duration">0:00</span>
+                        </div>
+                    </div>
+                    <div class="controls">
+                        <button id="repeat-plist">
+                            <i  class="material-icons" title="Playlist looped">repeat</i>
+                        </button>
+                        <button id="prev">
+                            <i  class="material-icons">skip_previous</i>
+                        </button>
+                        <div class="play-pause">
+                            <button>
+                                <i class="material-icons play">play_arrow</i>
+                            </button>
+                        </div>
+                        <button id="next">
+                            <i  class="material-icons">skip_next</i>
+                        </button>
+                        <button id="more-music">
+                            <i  class="material-icons">queue_music</i>
+                        </button>
+                    </div>
+                </div>
+                <div class="music-list">
+                    <div class="header">
+                        <div class="row">
+                            <i class="list material-icons">queue_music</i>
+                            <span>Music list</span>
+                        </div>
+                        <i id="close" class="material-icons">close</i>
+                    </div>
+                    <ul>
+                    </ul>
+                </div>
+            </div>
+            <div class="clock"></div>
+            <div class="checkbox_slidebar">
+                <button class="check_slidebar">
+                    <i  class="icofont-settings"></i>
+                </button>
+                <nav class="slide-bar ">
+                    <div class="slide-bar_top">
+                        <h3>sound</h3>
+                        <div class="check_slidebar">
+                            <i class="icofont-ui-close"></i>
+                        </div>
+                    </div>
+                    <div class="nav__container" id="sound_result">
+
+                    </div>
+                </nav>
+            </div>
+
+
+            <div class="checkbox_slidebar_video">
+                <button class="check_slidebar">
+                    <i class="icofont-ui-video"></i>
+                </button>
+                <nav class="slide-bar_bgr">
+                    <div class="slide-bar_top">
+                        <div class="check_slidebar">
+                            <i class="icofont-ui-close"></i>
+                        </div>
+                        <h3>background</h3>
+                    </div>
+                    <div class="nav__container" id="video_result">
+
+                    </div>
+                </nav>
+            </div>
+        </div>
+        <footer style="position: absolute; bottom: 0;left: 25px;color: lightgrey;">
+            <p>Creator: Trọng Dz</p>
+        </footer>
+    </div>
+    </div>
+
+    <!-- Optional JavaScript -->
+    <script src="./public/bootstrap-4.0.0/jquery-3.3.1.slim.min.js"></script>
+    <script src="./public/bootstrap-4.0.0/popper.min.js"></script>
+    <script src="./public/bootstrap-4.0.0/bootstrap.min.js"></script>
+    <script src="./public/bootstrap-4.0.0/jquery.min.js"></script>
+    <script src="./public/flipclock/flipclock.js"></script>
+    <script src="./js/main.js"></script>
+    <script src="./js/playaudiomusic.js"></script>
+    <script src="./js/bgrvideo.js"></script>
+
+</body>
+
+</html>
