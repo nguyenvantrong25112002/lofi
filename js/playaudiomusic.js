@@ -1,4 +1,19 @@
 let allMusic = [{
+        name: "Ít nhưng dài lâu",
+        artist: "yan nguyễn",
+        src: "it-nhung-dai-lau"
+    },
+    {
+        name: "cô thắm không về",
+        artist: "Phát Hồ",
+        src: "co-tham-ko-ve"
+    },
+    {
+        name: "chẳng ai yêu mãi một người",
+        artist: "NB3 HOAI BAO",
+        src: "chang-ai-yeu-mai-mot-nguoi"
+    },
+    {
         name: "Chắc vì mình chưa tốt",
         artist: "thanh hưng",
         src: "chac-vi-minh-chua-tot"
