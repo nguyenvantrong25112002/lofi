@@ -78,6 +78,12 @@ const player = document.querySelector(".player"),
 let musicIndex = Math.floor((Math.random() * allMusic.length) + 1);
 isMusicPaused = true;
 
+if (mainAudio.paused == false) {
+    /*do something*/
+    console.log('sfdfiwoeriuwer');
+
+}
+
 window.addEventListener("load", () => {
     loadMusic(musicIndex);
     playingSong();
@@ -93,12 +99,32 @@ function playMusic() {
     wrapper.classList.add("paused");
     playPauseBtn.querySelector("i").innerText = "pause";
     mainAudio.play();
+    music_disc_add();
+}
+
+function music_disc_add() {
+    const music_disc = document.querySelector('#app .music_disc'),
+        need_img = music_disc.querySelector('.need_img'),
+        disc_img = music_disc.querySelector('.disc_img');
+    disc_img.classList.add("active");
+    need_img.classList.add("active");
+
 }
 
 function pauseMusic() {
     wrapper.classList.remove("paused");
     playPauseBtn.querySelector("i").innerText = "play_arrow";
     mainAudio.pause();
+    music_disc_remove();
+}
+
+function music_disc_remove() {
+    const music_disc = document.querySelector('#app .music_disc'),
+        need_img = music_disc.querySelector('.need_img'),
+        disc_img = music_disc.querySelector('.disc_img');
+    disc_img.classList.remove("active");
+    need_img.classList.remove("active");
+
 }
 
 function prevMusic() {
@@ -107,7 +133,6 @@ function prevMusic() {
     loadMusic(musicIndex);
     playMusic();
     playingSong();
-    music_disc();
 
 }
 
@@ -117,7 +142,6 @@ function nextMusic() {
     loadMusic(musicIndex);
     playMusic();
     playingSong();
-    music_disc();
 
 }
 
@@ -125,17 +149,10 @@ playPauseBtn.addEventListener("click", () => {
     const isMusicPlay = wrapper.classList.contains("paused");
     isMusicPlay ? pauseMusic() : playMusic();
     playingSong();
-    music_disc();
+
 });
 
-function music_disc() {
-    const music_disc = document.querySelector('#app .music_disc'),
-        need_img = music_disc.querySelector('.need_img'),
-        disc_img = music_disc.querySelector('.disc_img');
-    disc_img.classList.toggle("active");
-    need_img.classList.toggle("active");
 
-}
 
 prevBtn.addEventListener("click", () => {
     prevMusic();
@@ -144,6 +161,8 @@ prevBtn.addEventListener("click", () => {
 nextBtn.addEventListener("click", () => {
     nextMusic();
 });
+
+
 
 mainAudio.addEventListener("timeupdate", (e) => {
     const currentTime = e.target.currentTime;
@@ -285,8 +304,8 @@ function clicked(element) {
     loadMusic(musicIndex);
     playMusic();
     playingSong();
-    music_disc();
 }
+
 
 
 ////////////////////////////////////////////

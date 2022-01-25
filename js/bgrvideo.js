@@ -43,12 +43,27 @@ let allBgr = [{
         id: 9,
         src: "./assets/video/9.mp4",
         preview: "./assets/video/preview/9.jpg"
-    }
-    // , {
-    //     id: 10,
-    //     src: "./assets/video/10.mp4",
-    //     preview: "./assets/video/preview/10.png"
-    // },
+    },
+    {
+        id: 10,
+        src: "./assets/video/10.mp4",
+        preview: "./assets/video/preview/10.jpg"
+    },
+    {
+        id: 11,
+        src: "./assets/video/11.mp4",
+        preview: "./assets/video/preview/11.png"
+    },
+    {
+        id: 12,
+        src: "./assets/video/12.mp4",
+        preview: "./assets/video/preview/12.png"
+    },
+    {
+        id: 13,
+        src: "./assets/video/13.mp4",
+        preview: "./assets/video/preview/13.png"
+    },
 ];
 
 var checkbox_slidebar_video = document.querySelector('.checkbox_slidebar_video'),
@@ -95,12 +110,14 @@ function videoMain_addActive(src) {
         videoOut_active = container_video.querySelector('.videoOut.active'),
         source_active = videoMain.querySelector('source');
     videoOut_active.classList.remove("active");
-    videoMain.classList.remove("active");
     source_active.setAttribute('src', src);
-    videoMain.classList.add("active");
-    // console.log(source_active);
-    videoMain.load();
+    setTimeout(() => {
+        videoMain.classList.remove("active");
+        videoMain.classList.add("active");
+        videoMain.load();
+    }, 500);
     videoMain.play();
+    // console.log(source_active);
 }
 
 function getVideo(id) {
