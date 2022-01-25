@@ -111,10 +111,10 @@ function videoMain_addActive(src) {
         source_active = videoMain.querySelector('source');
     videoOut_active.classList.remove("active");
     source_active.setAttribute('src', src);
+    videoMain.load();
     setTimeout(() => {
         videoMain.classList.remove("active");
         videoMain.classList.add("active");
-        videoMain.load();
     }, 500);
     videoMain.play();
     // console.log(source_active);
